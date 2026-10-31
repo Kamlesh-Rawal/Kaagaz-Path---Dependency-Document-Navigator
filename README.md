@@ -1,43 +1,54 @@
-# Kaagaz Path –  Dependency  Document Navigator
+# Kaagaz Path – AI-Powered Document Dependency Solver
 
-## About the Project
-Kaagaz Path is a web platform designed to simplify government document processes. It helps users identify missing documents and understand the steps required to obtain certificates.
+**Kaagaz Path** is a social-impact web application designed to help Indian citizens, rural families, students, senior citizens, and persons with disabilities navigate complex government paperwork.
 
-## Problem
-People often struggle with government paperwork because document requirements and application procedures can be confusing. Sometimes, one document is required to obtain another, making the process difficult to understand.
+It models government certificate requirements as a **Directed Acyclic Graph (DAG)** and utilizes **Kahn's Topological Sorting Algorithm** to calculate an actionable, step-by-step roadmap for obtaining certificates without getting blocked.
 
-## Our Solution
-Users select the certificate they need and enter the documents they already have. Kaagaz Path identifies missing documents and provides a step-by-step guide to help them understand what to do next.
+---
 
 ## Key Features
-- Document dependency solver
-- Missing document identification
-- Step-by-step guidance
-- Document checklist
-- Progress tracking
-- Simple explanations
-- Multilingual support (planned, if not yet implemented)
 
-## Technology Stack
-- Frontend: React
-- Backend: Python FastAPI
-- Database: PostgreSQL / SQLite for local demo
-- Dependency logic: Python graph-based solver
+1. **Topological Dependency Solver (DAG Engine):**
+   - Automatically orders document prerequisites.
+   - Identifies root documents, blocked dependencies, and ready-to-apply steps.
+   - Detects circular dependencies.
+2. **Interactive Flowchart & Inspector:**
+   - Visual tiered graph showing prerequisite flow.
+   - Node drawer to inspect verified alternatives and official departmental URLs.
+3. **Multilingual Support:**
+   - English, Hindi (`हिन्दी`), and Kannada (`ಕನ್ನಡ`).
+4. **Comprehensive Accessibility:**
+   - Web Speech API Text-to-Speech (TTS) integration.
+   - High Contrast toggle.
+   - Dynamic font zoom controls.
+5. **Digital Locker & Journey Tracker:**
+   - Track active applications.
+   - Updates progress percentages dynamically.
+6. **Application Draft Generator:**
+   - Generates formal legal drafts (Request Letters, Declarations, Missing Document Petitions).
+   - Instant printable views.
+7. **Zero-PII Privacy Protection:**
+   - Strict privacy-by-design architecture: no real biometric identifiers, account numbers, or personal credentials stored.
 
-## Installation and Setup
-Add the actual installation instructions for your project here.
+---
 
-## Environment Variables
-See `.env.example` for the required configuration. Never upload passwords, API keys or secret credentials.
+## Quick Start (Local Setup)
 
-## Sample Data and Testing
-The repository includes sample document dependency data and test cases for the solver.
+### Prerequisites
+- Node.js (v18.0.0 or higher)
+- npm or yarn
 
-## Important Note
-This is an informational guidance platform. Requirements must be verified against official government sources. It does not issue certificates or guarantee application approval.
+### Installation
+```bash
+# 1. Unzip the archive and enter directory
+unzip kaagaz-path.zip
+cd kaagaz-path
 
-## Social Impact
-Kaagaz Path aims to reduce confusion, save time and make government services easier to understand, especially for rural families, students and underserved communities.
+# 2. Install dependencies
+npm install
 
-## License
-This project is licensed under the MIT License.
+# 3. Start development server
+npm run dev
+```
+
+Visit `http://localhost:5173` in your browser.
